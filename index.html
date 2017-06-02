@@ -9,6 +9,8 @@
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
     <style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
 
     <!--[if IE]>
@@ -44,8 +46,12 @@
         <div class="starter-template">
             <div class="audio-handler-div">
                 <audio class="audio1" src="src/minta.mp3"></audio>
-                <button class="play btn btn-success"><span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span></button>
-                <button class="mute btn btn-warning"><span class="glyphicon glyphicon-volume-off" aria-hidden="true"></span></button>
+                <button class="play btn btn-success">
+                    <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>           <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+                <button class="mute btn btn-warning">
+                    <span class="glyphicon glyphicon-volume-off" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-volume-down" aria-hidden="true"></span>
+                </button>
             </div>
             <br>
             <audio class="audio2" src="src/minta2.mp3" controls></audio>            

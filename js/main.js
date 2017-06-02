@@ -1,5 +1,6 @@
 // Audio vezérlő függyvény javascript-el, így is lehet deklarálni a függvényt
 var audioHandler = function(div) {
+    
     // A this lesz a függvény mutatója
     //Audio elem kiválasztása és mentése.
     //HTML5-ben létezik már osztály, de minden böngésző támogatja.
@@ -7,13 +8,25 @@ var audioHandler = function(div) {
     // áés egy metódusa, tagfüggvénye a this.play.
     this.div = div;
     this.playBtn = div.querySelector(".play")
+    this.muteBtn = div.querySelector(".mute")
     this.audio = div.querySelector("audio");
+    
     
     //Constructor
     this.construct = function () {
+        
+        //Lejátszógomb
         this.playBtn.addEventListener("click", function() { 
-            console.log(this);
+            this.parentNode.handler.play();
         }, false);
+        
+        //Pause gomb
+        this.muteBtn.addEventListener("click", function() { 
+            this.parentNode.handler.toggleMute();
+        }, false);
+        
+    };
+    
     
     //Lejátszás a függvényen belüli függvénnyel(tagfüggvény).
     //a this.play egy függvény definíció
@@ -69,9 +82,10 @@ var audioHandler = function(div) {
 
     
 var audioDivs = document.querySelectorAll(".audio-handler-div");
+
 Array.prototype.forEach.call(audioDivs, function(item) {
     item.handler = new audioHandler(item);
-});
+} );
 
 
 //Példányosítás
