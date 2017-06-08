@@ -17,7 +17,7 @@ var audioHandler = function(div) {
         
         //Lejátszógomb
         this.playBtn.addEventListener("click", function() { 
-            this.parentNode.handler.play();
+            this.parentNode.handler.togglePlay();
         }, false);
         
         //Pause gomb
@@ -34,6 +34,19 @@ var audioHandler = function(div) {
         this.audio.play();
     };
     
+    
+    //Lejátszás gomb váltása
+    this.togglePlay = function() {
+        if ( this.audio.paused ) {
+            this.play();
+            this.div.classList.add( "played" );
+        } else {
+            this.pause();
+            this.div.classList.remove( "played" );            
+        }   
+    };
+    
+    
     //Pause.
     this.pause = function() {
         this.audio.pause();
@@ -47,6 +60,11 @@ var audioHandler = function(div) {
     //Némítás váltása, használtuk a ! (negálás)logikai operátort
     this.toggleMute = function () {
         this.audio.muted = !this.audio.muted;
+        if ( this.audio.muted ) {
+            this.div.classList.add( "muted" );
+        } else {
+            this.div.classList.remove( "muted" );
+        }
     };
     
     //Összes némítása.
