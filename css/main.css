@@ -6,6 +6,6 @@ div.muted .glyphicon-volume-up {
 }
 
 div.played .glyphicon-pause,
-div.muted glyphicon-volume-off {
+div.muted .glyphicon-volume-off {
     display: block;
 }
